@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+  <title>Graphite Monitor</title>
+  <style type="text/css">
+  body {
+    background: #000;
+    color: #fff;
+    font-family: Helvetica, Arial, sans;
+  }
+  </style>
+</head>
+<body>
+  <div>Last Updated: <span id="updated_at"></div>
+
+  <script type="text/javascript">
+  (function() {
+    var graphite = {
+
+      domain:   "",
+      base_url: "/render/?",
+
+      defaults: {
+        targets:    [],
+        width:      "half", // "auto", "half", null
+        height:     450,
+        title:      null,
+        lineWidth:  1,
+        lineMode:   "slope",
+        bgcolor:    "000000",
+        fgcolor:    "ffffff",
+        hideLegend: false,
+        graphOnly:  false,
+        hideAxes:   false,
+        hideGrid:   false,
+        yMax:       null,
+        yMin:       null,
+        areaMode:   "stacked",
+        fontName:   "Helvetica"
+      },
+
+      redraw_graphs: function() {
+        var self = this;
+
+        var now   = new Date(),
+            hour  = now.getHours(),
+            min   = now.getMinutes(),
+            sec   = now.getSeconds(),
+            ampm  = 'am';
+
+        if (hour == 0) hour = 12;
+        if (hour>12) {
+          hour = hour-12;
+          ampm = 'pm';
+        }
+        if (min < 10) min = '0'+min;
+        if (sec < 10) sec = '0'+sec;
+
+        document.getElementById('updated_at').innerHTML = hour +':'+ min +':'+ sec +ampm;
+
+        var imgs = document.getElementsByTagName('img');
+        for (var i=0; i<imgs.length; i++) {
+          var ts = imgs[i].src.indexOf('&_ts='),
+              src = imgs[i].src;
+
+          if (ts > -1) {
+            src = src.substr(0, ts);
+          }
+          imgs[i].src = src+'&_ts='+now.getTime(); // reload images
+        }
+      },
+
+      register_graphs: function(graphs) {
+        var self = this;
+
+        for (g in graphs) {
+          var img = document.createElement('img');
+          img.src = self.domain+self.base_url+self._opts_to_params(graphs[g]);
+
+          document.body.appendChild(img);
+        }
+      },
+
+      _opts_to_params: function(opts) {
+        if (opts['targets'].length == 0) return; // nothing to do here
+
+        var self = this,
+            ret = [];
+
+        for (t in opts['targets']) {
+          ret.push('target='+opts['targets'][t]);
+        }
+
+        for (o in self.defaults) {
+          if (o == 'targets') continue; // taken care of above
+
+          var v = (opts[o] == undefined)? self.defaults[o] : opts[o];
+          if (v == null || v == false) continue;
+
+          if (v == 'auto') {
+            v = document[o]-30;
+          } else if (v == 'half') {
+            v = (document[o]-40)/2;
+          }
+
+          ret.push(o+'='+v);
+        }
+
+        return ret.join('&');
+      }
+    };
+
+    window["Graphite"] = graphite;
+  })();
+
+  Graphite.domain = "http://graphitehost.com";
+  Graphite.register_graphs([
+    {
+      targets: [
+        // "some.statsd.stat.goes.here",
+      ],
+      title: "Graph Title"
+      // other settings are listed above
+    }
+  ]);
+
+  Graphite.redraw_graphs();
+  setInterval("Graphite.redraw_graphs()", 10000);
+  </script>
+</body>
+</html>
