@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{statsd}
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael D'Auria"]
@@ -18,7 +18,7 @@ Why?
 ----
 Because we at SeatGeek are more comfortable looking at Ruby than JavaScript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
 
-Contributing to statsd_rb_
+Contributing to statsd_rb
 ----------------------
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
