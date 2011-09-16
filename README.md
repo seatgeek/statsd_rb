@@ -6,7 +6,7 @@ Why?
 ----
 Because we at SeatGeek are more comfortable looking at Ruby than JavaScript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
 
-Contributing to statsd_rb_
+Contributing to statsd_rb
 ----------------------
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
