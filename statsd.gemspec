@@ -12,13 +12,13 @@ Gem::Specification.new do |s|
   s.date = %q{2011-09-16}
   s.description = %q{StatsD (Ruby Edition)
 =====================
-A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite][graphite].
+A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite](http://graphite.wikidot.com/).
 
 Why?
 ----
-Because we at SeatGeek are more comfortable looking at Ruby than javascript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
+Because we at SeatGeek are more comfortable looking at Ruby than JavaScript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
 
-Contributing to statsd
+Contributing to statsd_rb_
 ----------------------
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
@@ -43,7 +43,9 @@ further details.
   s.files = [
     "Gemfile",
     "Gemfile.lock",
+    "LICENSE.txt",
     "README.md",
+    "Rakefile",
     "contrib/monitor.html",
     "lib/statsd.rb",
     "lib/statsd/aggregator.rb",
@@ -55,6 +57,7 @@ further details.
     "spec/aggregator_spec.rb",
     "spec/server_spec.rb",
     "spec/spec_helper.rb",
+    "statsd.gemspec",
     "statsd.rb"
   ]
   s.homepage = %q{http://github.com/seatgeek/statsd_rb}

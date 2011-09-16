@@ -1,12 +1,12 @@
 StatsD (Ruby Edition)
 =====================
-A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite][graphite].
+A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite](http://graphite.wikidot.com/).
 
 Why?
 ----
-Because we at SeatGeek are more comfortable looking at Ruby than javascript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
+Because we at SeatGeek are more comfortable looking at Ruby than JavaScript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
 
-Contributing to statsd
+Contributing to statsd_rb_
 ----------------------
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
