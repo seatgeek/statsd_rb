@@ -27,7 +27,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0.0)
   daemons (~> 1.1.0)
-  eventmachine (~> 0.12.10)
+  eventmachine (>= 0.12.10)
   jeweler (~> 1.5.2)
   rcov
   rspec (~> 2.3.0)
