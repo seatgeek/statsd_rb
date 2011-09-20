@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael D'Auria"]
-  s.date = %q{2011-09-16}
+  s.date = %q{2011-09-20}
   s.description = %q{StatsD (Ruby Edition)
 =====================
 A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite](http://graphite.wikidot.com/).
@@ -75,7 +75,7 @@ further details.
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<eventmachine>, ["~> 0.12.10"])
+      s.add_runtime_dependency(%q<eventmachine>, [">= 0.12.10"])
       s.add_runtime_dependency(%q<daemons>, ["~> 1.1.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
@@ -83,7 +83,7 @@ further details.
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<yard>, ["~> 0.6.0"])
     else
-      s.add_dependency(%q<eventmachine>, ["~> 0.12.10"])
+      s.add_dependency(%q<eventmachine>, [">= 0.12.10"])
       s.add_dependency(%q<daemons>, ["~> 1.1.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
@@ -92,7 +92,7 @@ further details.
       s.add_dependency(%q<yard>, ["~> 0.6.0"])
     end
   else
-    s.add_dependency(%q<eventmachine>, ["~> 0.12.10"])
+    s.add_dependency(%q<eventmachine>, [">= 0.12.10"])
     s.add_dependency(%q<daemons>, ["~> 1.1.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
