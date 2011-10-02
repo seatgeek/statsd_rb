@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael D'Auria"]
-  s.date = %q{2011-09-20}
+  s.date = %q{2011-10-02}
+  s.default_executable = %q{statsd}
   s.description = %q{StatsD (Ruby Edition)
 =====================
 A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite](http://graphite.wikidot.com/).
@@ -36,6 +37,7 @@ Copyright (c) 2011 Michael D'Auria. See LICENSE.txt for
 further details.
 }
   s.email = %q{michael.dauria@gmail.com}
+  s.executables = ["statsd"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
@@ -46,6 +48,7 @@ further details.
     "LICENSE.txt",
     "README.md",
     "Rakefile",
+    "bin/statsd",
     "contrib/monitor.html",
     "lib/statsd.rb",
     "lib/statsd/aggregator.rb",
