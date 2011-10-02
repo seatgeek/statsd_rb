@@ -30,7 +30,7 @@ module Statsd
         end
 
         if config[:daemonize]
-          app_name = 'statsd %s:%d' % config[:host], config[:port]
+          app_name = 'statsd %s:%d' % [ config[:host], config[:port] ]
           Daemons.daemonize(:app_name => app_name)
         else
           puts "Now accepting connections on address #{config[:host]}, port #{config[:port]}..."
