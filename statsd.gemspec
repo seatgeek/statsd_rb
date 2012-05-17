@@ -4,39 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{statsd}
-  s.version = "0.1.0"
+  s.name = "statsd"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael D'Auria"]
-  s.date = %q{2011-10-02}
-  s.default_executable = %q{statsd}
-  s.description = %q{StatsD (Ruby Edition)
-=====================
-A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite](http://graphite.wikidot.com/).
-
-Why?
-----
-Because we at SeatGeek are more comfortable looking at Ruby than JavaScript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.
-
-Contributing to statsd_rb
-----------------------
-
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
-
-Copyright
----------
-
-Copyright (c) 2011 Michael D'Auria. See LICENSE.txt for
-further details.
-}
-  s.email = %q{michael.dauria@gmail.com}
+  s.date = "2012-05-17"
+  s.description = "StatsD (Ruby Edition)\n=====================\nA network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to [graphite](http://graphite.wikidot.com/).\n\nWhy?\n----\nBecause we at SeatGeek are more comfortable looking at Ruby than JavaScript on the server side. This is created using EventMachine and follows the same specs as the original StatsD.\n\nContributing to statsd_rb\n----------------------\n\n* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet\n* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it\n* Fork the project\n* Start a feature/bugfix branch\n* Commit and push until you are happy with your contribution\n* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.\n* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.\n\nCopyright\n---------\n\nCopyright (c) 2011 Michael D'Auria. See LICENSE.txt for\nfurther details.\n"
+  s.email = "michael.dauria@gmail.com"
   s.executables = ["statsd"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -63,11 +38,11 @@ further details.
     "statsd.gemspec",
     "statsd.rb"
   ]
-  s.homepage = %q{http://github.com/seatgeek/statsd_rb}
+  s.homepage = "http://github.com/seatgeek/statsd_rb"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.0}
-  s.summary = %q{A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to graphite.}
+  s.rubygems_version = "1.8.21"
+  s.summary = "A network daemon for aggregating statistics (counters and timers), rolling them up, then sending them to graphite."
   s.test_files = [
     "spec/aggregator_spec.rb",
     "spec/server_spec.rb",
